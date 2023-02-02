@@ -4,6 +4,7 @@ import { useStarkEthContract } from "./StarkEthContract";
 function Userbalance() {
   const { contract } = useStarkEthContract();
   const { address } = useAccount();
+
   const { data, loading, error, refresh } = useStarknetCall({
     contract: contract,
     method: "balanceOf",

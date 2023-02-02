@@ -9,12 +9,21 @@ function SendGwei() {
   const [count, setCount] = useState(0);
 
   const calls = useMemo(() => {
-    const tx = {
-      contractAddress: STARKETH_CONTRACT_ADDRESS,
-      entrypoint: "transfer",
+    const tx = [
+      //Approve
+      {
+        contractAddess: STARKETH_CONTRACT_ADDRESS,
+        entrypoint: "approve",
+        calldata: [address1, address2, [1, 0]],
+      },
+      //Transfer
+      {
+        contractAddress: STARKETH_CONTRACT_ADDRESS,
+        entrypoint: "transfer",
 
-      calldata: [address1, address2, [1, 0]],
-    };
+        calldata: [address1, address2, [1, 0]],
+      },
+    ];
     return Array(count).fill(tx);
   }, [address1, address2, count]);
 
