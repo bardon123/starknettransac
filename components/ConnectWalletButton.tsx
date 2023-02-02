@@ -4,6 +4,7 @@ import ConnectWalletMenuModal from "./modals/ConnectWalletMenuModal";
 import Userbalance from "../hooks/Userbalance";
 import { shortenAddress } from "@/types/utils";
 import DisplayNetworkModal from "./modals/DisplayNetworkModal";
+import SendGwei from "./SendGwei";
 
 function ConnectWalletButton() {
   const { account, address, status } = useAccount();
@@ -19,8 +20,11 @@ function ConnectWalletButton() {
         </button>
       ) : (
         <div>
+          Status: Connected <br></br>
           <DisplayNetworkModal /> <br></br>
           Account: {shortenAddress(address)} <Userbalance />
+          <br></br>
+          <SendGwei />
           <button onClick={disconnect}>Disconnect</button>
         </div>
       )}

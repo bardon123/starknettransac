@@ -34,7 +34,7 @@ function SendGwei() {
         <button onClick={inc}>Increment</button>
       </p>
       <p>
-        <button onClick={execute}>Execute</button>
+        <button onClick={execute}>Send {count} Transaction</button>
       </p>
     </>
   );

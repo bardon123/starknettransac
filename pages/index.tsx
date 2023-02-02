@@ -6,8 +6,6 @@ export default function Home() {
   return (
     <>
       <ConnectWalletButton />
-      <DisplayNetworkModal />
-      <SendGwei />
     </>
   );
 }
