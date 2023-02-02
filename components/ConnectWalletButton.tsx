@@ -3,6 +3,7 @@ import { useState } from "react";
 import ConnectWalletMenuModal from "./modals/ConnectWalletMenuModal";
 import Userbalance from "../hooks/Userbalance";
 import { shortenAddress } from "@/types/utils";
+import DisplayNetworkModal from "./modals/DisplayNetworkModal";
 
 function ConnectWalletButton() {
   const { account, address, status } = useAccount();
@@ -18,6 +19,7 @@ function ConnectWalletButton() {
         </button>
       ) : (
         <div>
+          <DisplayNetworkModal /> <br></br>
           Account: {shortenAddress(address)} <Userbalance />
           <button onClick={disconnect}>Disconnect</button>
         </div>
